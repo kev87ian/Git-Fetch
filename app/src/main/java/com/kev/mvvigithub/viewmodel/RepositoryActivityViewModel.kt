@@ -22,10 +22,10 @@ class RepositoryActivityViewModel : ViewModel() {
         return repositoryListData
     }
 
-    fun makeAPICall(){
+    fun makeAPICall(input : String){
 
         val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(RetrofitService::class.java)
-        val call = retrofitInstance.getDataFromAPI("newyork")
+        val call = retrofitInstance.getDataFromAPI(input)
         call.enqueue(object : Callback<RepositoryList?> {
             override fun onResponse(call: Call<RepositoryList?>, response: Response<RepositoryList?>) {
                 if (response.isSuccessful){
