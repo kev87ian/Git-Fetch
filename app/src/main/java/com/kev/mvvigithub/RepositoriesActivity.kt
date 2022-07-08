@@ -29,7 +29,7 @@ class RepositoriesActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         recyclerView = findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        repositoryAdapter = RepositoryAdapter()
+        repositoryAdapter = RepositoryAdapter(this)
         recyclerView.adapter = repositoryAdapter
         mDialog = ProgressDialog(this)
     }
